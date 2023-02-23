@@ -25,14 +25,14 @@ function App() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
       <section>
         <MoviesList movies={movies} />
       </section>
-    </React.Fragment>
+    </>
   );
 }
 
