@@ -19,15 +19,19 @@ function App() {
 
       const data = await response.json();
 
-      const loadedMovies = [];
+      let loadedMovies = [];
 
       for (const key in data) {
-        loadedMovies.push({
-          id: key,
-          title: data[key].title,
-          openingText: data[key].openingText,
-          releaseDate: data[key].releaseDate,
-        });
+        // loadedMovies.push({
+        //   id: key,
+        //   title: data[key].title,
+        //   openingText: data[key].openingText,
+        //   releaseDate: data[key].releaseDate,
+        // });
+        loadedMovies = [
+          ...loadedMovies,
+          { id: key, title: data[key].title, openingText: data[key].openingText, releaseDate: data[key].releaseDate },
+        ];
       }
       setMovies(loadedMovies);
     } catch (error) {
